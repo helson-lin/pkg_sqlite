@@ -18,7 +18,7 @@ jobs:
       run:  npm install pnpm -g
 
     - name: Npm Install
-      run: pnpm intall
+      run: pnpm install
 
     - name: Build Release
       run: npm run build
