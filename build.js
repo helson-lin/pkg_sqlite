@@ -75,6 +75,4 @@ const getSqliteReleaseDir = () => {
   const ReleaseDir = path.join(baseDir, sqlite3Dir, "build/Release/")
   console.log(ReleaseDir)
 }
-
-getSqliteReleaseDir()
-// start()
+start()
