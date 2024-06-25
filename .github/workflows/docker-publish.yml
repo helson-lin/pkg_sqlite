@@ -25,7 +25,7 @@ jobs:
 
     # step7: create release
     - name: List Release
-      run: ls -l
+      run: ls -l dist
 
     - name: release
       uses: softprops/action-gh-release@v1
