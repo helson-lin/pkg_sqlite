@@ -67,4 +67,15 @@ const start = () => {
     console.error('❗️ read package.json failed', e)
   }
 }
-start()
+
+const getSqliteReleaseDir = () => {
+  execSync(`ls -l ${path.join(__dirname, 'node_modules')}`,  { stdio: 'inherit' })
+  const baseDir = path.join(__dirname, 'node_modules')
+  const allDir = fs.readdirSync(baseDir)
+  const sqlite3Dir = allDir.find(i => i.startsWith('sqlite3'))
+  console.log(sqlite3Dir, path.join(baseDir, sqlite3Dir))
+}
+
+getSqliteReleaseDir()
+
+// start()
