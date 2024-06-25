@@ -14,11 +14,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Npm Install Pnpm
-      run:  npm install pnpm -g
-
     - name: Npm Install
-      run: pnpm install
+      run: npm install
 
     - name: Build Release
       run: npm run build
