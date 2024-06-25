@@ -4,6 +4,7 @@ const path = require("path");
 const { execSync} = require('child_process')
 // 源文件路径（根据你的项目结构调整）
 let isDebug = false;
+let releaseName;
 const argv = process.argv.slice(2)
 if (argv && argv[0] === '--debug') isDebug = true
 const sourcePath = path.join(__dirname, "package/");
@@ -50,7 +51,7 @@ const moveNodeSqlite = (targetPlatform) => {
 const pkgRelease = (targetPlatform) => {
     moveNodeSqlite(targetPlatform);
     // 执行打包命令
-    execSync(`pkg . -t ${targetPlatform}` + (isDebug ? ' --debug' : ''), { stdio: 'inherit' })
+    execSync(`pkg . -t ${targetPlatform} --output ./dist/${releaseName}-${targetPlatform}${targetPlatform.indexOf('windows') !== -1 ? '.exe' : ''}` + (isDebug ? ' --debug' : ''), { stdio: 'inherit' })
 };
 
 const start = () => {
@@ -58,6 +59,7 @@ const start = () => {
     const dataString = fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8')
     const data = JSON.parse(dataString)
     const platforms = data.pkg.targets
+    releaseName = data.name
     for (let item of platforms) {
       pkgRelease(item)
     }
