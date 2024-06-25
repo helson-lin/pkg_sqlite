@@ -19,6 +19,9 @@
       "index.js",
       "db.js"
     ],
+    "assets": [
+       "node_modules/sqlite3/lib/binding/**/*"
+    ],
     "targets": [
       "node14-macos-arm64",
       "node14-macos-x64",
