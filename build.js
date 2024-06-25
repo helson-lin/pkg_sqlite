@@ -77,4 +77,4 @@ const getSqliteReleaseDir = () => {
 }
 
 getSqliteReleaseDir()
-start()
+// start()
