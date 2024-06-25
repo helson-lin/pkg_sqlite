@@ -14,13 +14,19 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Npm Install Pnpm
+      run:  npm install pnpm -g
+
     - name: Npm Install
-      run: |
-        npm install 
+      run: pnpm intall
 
     - name: Build Release
       run: npm run build
+
     # step7: create release
+    - name: List Release
+      run: ls -l
+
     - name: release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
