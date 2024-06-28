@@ -25,8 +25,20 @@ const moveNodeSqlite = (targetPlatform) => {
     case "macos-arm64":
       targetFile = "macos_arm64_node_sqlite3.node";
       break;
-    case "macos-arm64":
+    case "macos-x64":
       targetFile = "macos_x64_node_sqlite3.node";
+      break;
+    case "alpine-x64":
+      targetFile = "alpine_x64_node_sqlite3.node";
+      break;
+    case "alpine-arm64":
+      targetFile = "alpine_arm64_node_sqlite3.node";
+      break;
+    case "windows-x64":
+      targetFile = "windows_x64_node_sqlite3.node";
+      break;
+    case "windows-arm64":
+      targetFile = "windows_arm64_node_sqlite3.node";
       break;
     default:
       console.error(`\n ❗️ Unsupported target platform：${targetPlatform} \n`);
@@ -68,11 +80,4 @@ const start = () => {
   }
 }
 
-const getSqliteReleaseDir = () => {
-  const baseDir = path.join(__dirname, 'node_modules')
-  const allDir = fs.readdirSync(baseDir)
-  const sqlite3Dir = allDir.find(i => i.startsWith('sqlite3'))
-  const ReleaseDir = path.join(baseDir, sqlite3Dir, "build/Release/")
-  console.log(ReleaseDir)
-}
 start()
