@@ -1,7 +1,7 @@
 {
   "name": "docker_sync",
   "version": "1.0.0",
-  "description": "",
+  "description": "a template for packaging a Node program with node sqlite3.node across platforms using pkg",
   "main": "index.js",
   "bin": "index.js",
   "scripts": {

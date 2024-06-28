@@ -1,30 +1,28 @@
 # PKG_BUILD_NODE_DEPENDENCE
 
-This is a template for packaging a Node program with node sqlite3.node across platforms using pkg.
+这是一个使用 pkg 跨平台打包带有 `node_sqlite3.node` 的 Node.js 程序的模板。
 
-The business code for this project is a direct copy, don't care.
+项目的业务代码是直接复制的，不需要关心。
 
+## 关于
 
-## About
+### 如何为我的项目构建？
 
-### How to build for my project?
+1. 创建一个名为 `package` 的目录，把所有平台的 `.node` 文件放入其中，确命名规则与当前项目保持一致。
+2. 将 `build.js` 复制到你的项目根目录中。确保你的 `package.json` 中有 `name` 和 `pkg` 选项，并且 `pkg.assets` 必须与该项目一致。
+3. 在你的 `package.json` 和 GitHub Actions 的 YAML 文件中使用 `node build.js` 来更改你的构建方法。
 
-1. Create a directory named `package` drop the all platform’s `.node` file, Keep the command mode consistent with the current project
-2. Copy the `build.js` to your project root directory. And make sure there have `name` and `pkg` options in your `packge.json`. `pkg.assets` must be the same as this project.
-3. Change your package build method with `node build.js` in your `package.json` and your github action's yml file.
+### 注意事项
 
-### Notification
+ `.node` 文件必须与你的 `sqlite3` 版本兼容。
 
-You should know the `.node` file must is compitable with you `sqlite3` version
+如果你想要修改打包之后的文件名，请修改 `build.js` 中的代码。
 
-If you want to change the dist filename, please modify the code in `build.js`, it's easy for you.
+### GitHub Actions
 
+如果你想要自动构建可执行文件和 Docker 镜像，可以使用下面的配置文件。
 
-### Github Action
-
-If you want auto build executable file and docker image, you can work with the below configuration file.
-
-This GitHub action will only be triggered when you push a version, and you cannot use it directly, please modify it according to the actual situation.
+这个 GitHub Actions 只会在推送版本时触发，并且你不能直接使用它，请根据实际情况进行修改。
 
 
 ```yml

@@ -1,3 +1,7 @@
 FROM ubuntu:18.04
+COPY cp ./dist/docker_sync-node14-linux-arm64 /app/
 WORKDIR /app
+CMD chmod +x docker_sync-node14-linux-arm64
 EXPOSE 80
+
+ENTRYPOINT ["./docker_sync-node14-linux-arm64"]
