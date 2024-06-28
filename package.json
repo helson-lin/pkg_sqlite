@@ -1,5 +1,5 @@
 {
-  "name": "docker_sync",
+  "name": "pkg_sqlite",
   "version": "1.0.0",
   "description": "a template for packaging a Node program with node sqlite3.node across platforms using pkg",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helson-lin/docker_sync_template.git"
+    "url": "git+https://github.com/helson-lin/pkg_sqlite.git"
   },
   "keywords": ["demo"],
   "author": "helsonlin",
@@ -34,9 +34,9 @@
     "outputPath": "dist"
   },
   "bugs": {
-    "url": "https://github.com/helson-lin/docker_sync_template/issues"
+    "url": "https://github.com/helson-lin/pkg_sqlite/issues"
   },
-  "homepage": "https://github.com/helson-lin/docker_sync_template#readme",
+  "homepage": "https://github.com/helson-lin/pkg_sqlite#readme",
   "devDependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
